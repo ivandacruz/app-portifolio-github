@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/layout_padding"
+    tools:context="ui.DetailsActivity">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_repo_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textSize="@dimen/repo_name"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@sample/bruno.json/data/name" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_title_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/layout_padding"
+        android:text="@string/title_description"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tv_repo_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_repo_name" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_repo_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="4"
+        app:layout_constraintStart_toStartOf="@+id/tv_title_description"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_description"
+        tools:text="@sample/bruno.json/data/description" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_title_language"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/layout_half_padding"
+        android:text="@string/title_language"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tv_repo_description"
+        app:layout_constraintTop_toBottomOf="@+id/tv_repo_description" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_repo_language"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="2"
+        app:layout_constraintStart_toStartOf="@+id/tv_title_language"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_language"
+        tools:text="@sample/bruno.json/data/language" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_title_created_at"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/layout_half_padding"
+        android:text="@string/title_created_at"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tv_repo_language"
+        app:layout_constraintTop_toBottomOf="@+id/tv_repo_language" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_repo_created_at"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/tv_title_created_at"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_created_at"
+        tools:text="@sample/bruno.json/data/created_at" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_title_updated_at"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/layout_half_padding"
+        android:text="@string/title_updated_at"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tv_repo_created_at"
+        app:layout_constraintTop_toBottomOf="@+id/tv_repo_created_at" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_repo_updated_at"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/tv_title_updated_at"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_updated_at"
+        tools:text="@sample/bruno.json/data/updated_at" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_icons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/layout_extra_padding"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@+id/tv_repo_updated_at"
+        app:layout_constraintTop_toBottomOf="@+id/tv_repo_updated_at">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_repo_star"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            app:chipBackgroundColor="@color/white"
+            app:chipIcon="@drawable/ic_stars"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@sample/bruno.json/data/stargazers_count" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_repo_watchers"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            app:chipBackgroundColor="@color/white"
+            app:chipIcon="@drawable/ic_watches"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/chip_repo_forks_count"
+            app:layout_constraintStart_toEndOf="@+id/chip_repo_star"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@sample/bruno.json/data/watchers" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_repo_forks_count"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            app:chipBackgroundColor="@color/white"
+            app:chipIcon="@drawable/ic_forks"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@sample/bruno.json/data/forks_count" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_title_owner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/layout_extra_padding"
+        android:text="@string/title_owner"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/cl_icons"
+        app:layout_constraintStart_toStartOf="@+id/cl_icons"
+        app:layout_constraintTop_toBottomOf="@+id/cl_icons" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_owner"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="@dimen/layout_padding"
+        app:layout_constraintEnd_toEndOf="@+id/tv_title_owner"
+        app:layout_constraintStart_toStartOf="@+id/tv_title_owner"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_owner"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tv_repo_owner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/layout_padding"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/iv_owner"
+        app:layout_constraintStart_toStartOf="@+id/iv_owner"
+        app:layout_constraintTop_toBottomOf="@+id/iv_owner"
+        tools:text="@sample/bruno.json/data/owner/login" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
