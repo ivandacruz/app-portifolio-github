@@ -1,6 +1,6 @@
 # App Portifólio Github
 
-## Criando um App para Apresentar seu Portfólio do GitHub - Bootcamp Dio Inter Dev Android
+## App para Apresentar seu Portfólio do GitHub - Bootcamp Dio Inter Dev Android
 
 ## Objetivo
 
